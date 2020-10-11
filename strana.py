@@ -68,6 +68,8 @@ class Strana():
 
 
 class Article():
+    """Class represents article object
+    """
     def __init__(self, art_url):
         """Parses article URL and assignes dict object to `__content` value
 
