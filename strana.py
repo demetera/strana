@@ -6,7 +6,7 @@ import json
 class Strana():
     """Class represents connection to strana.ua"""
     STRANA_URL = 'https://strana.ua'
-    def __init__(self, day=None, page=1):
+    def __init__(self, day=None, page=1, query=None):
         """Class initialization
 
         Args:
@@ -14,7 +14,10 @@ class Strana():
             page (int, optional): Page number. Defaults to 1.
         """
         if day == None:
-            self.__requrl = '{}/news/page-{}.html'.format(self.STRANA_URL, page)
+            if len(query) != None:
+                self.__requrl = '{}/search/page-{}.html?query={}'.format(self.STRANA_URL, page, query)
+            else:
+                self.__requrl = '{}/news/page-{}.html'.format(self.STRANA_URL, page)
         else:
             self.__requrl = '{}/news/day={}/page-{}.html'.format(self.STRANA_URL, day, page)
         content = requests.get(self.__requrl).text
