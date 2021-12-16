@@ -1,11 +1,11 @@
-from bs4 import BeautifulSoup
-import requests
 import json
 
+import requests
+from bs4 import BeautifulSoup
 
 class Strana():
     """Class represents connection to strana.ua"""
-    STRANA_URL = 'https://strana.ua'
+    STRANA_URL = 'https://strana.news'
     def __init__(self, day=None, page=1, query=None):
         """Class initialization
 
@@ -13,8 +13,9 @@ class Strana():
             day (str, optional): date in format yyyy-mm-dd or `yesterday`. Defaults to None.
             page (int, optional): Page number. Defaults to 1.
         """
+        
         if day == None:
-            if len(query) != None:
+            if query != None:
                 self.__requrl = '{}/search/page-{}.html?query={}'.format(self.STRANA_URL, page, query)
             else:
                 self.__requrl = '{}/news/page-{}.html'.format(self.STRANA_URL, page)
