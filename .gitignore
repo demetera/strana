@@ -1,2 +1,3 @@
 strana_articles/*.csv
 *.csv
+__pycache__/*
