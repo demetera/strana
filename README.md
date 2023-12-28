@@ -1,7 +1,6 @@
 # strana.news (Ukrainian news website) basic parser
 
-Basic parser for strana.ua news website
-Early alpha version
+Basic parser for strana.news website
 
 Example:
 ```python
