@@ -1,3 +1,4 @@
 strana_articles/*.csv
 *.csv
 __pycache__/*
+.gitpod.yml
